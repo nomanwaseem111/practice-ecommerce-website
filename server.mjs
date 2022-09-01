@@ -58,7 +58,7 @@ app.listen(port, () => {
 })
 
 
-let dbURI = "mongodb+srv://abc:abc@cluster0.2acphjp.mongodb.net/practiceecommercewebsite?retryWrites=true&w=majority";
+let dbURI = "mongodb+srv://abc:abc@cluster0.2acphjp.mongodb.net/practicewebsite?retryWrites=true&w=majority";
 // let dbURI = 'mongodb://localhost/mydatabase';
 mongoose.connect(dbURI);
 
