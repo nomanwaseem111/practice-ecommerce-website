@@ -68,7 +68,7 @@
         const getAllData = async () => {
 
             try {
-                const response = await axios.get('/products');
+                const response = await axios.get('https://practice-ecommerce-website.herokuapp.com/products');
                 console.log(response.data.data);
             } catch (error) {
                 console.error(error.response.data);
