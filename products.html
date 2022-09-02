@@ -70,6 +70,21 @@
             try {
                 const response = await axios.get('https://practice-ecommerce-website.herokuapp.com/products');
                 console.log(response.data.data);
+
+                let main = document.querySelector('.main')
+
+                response.data.data.map(eachProduct => {
+
+                    main.innerHTML += `<div class="productList">
+ 
+ <img src="./Beats-Studio3-Wireless-Bluetooth-Headphones-Studio-3-Noise-Cancelling-Headset-Music-Sport-Deep-Bass-Earphone-Hands.jpg_220x220xz.jpg_.webp" alt="">
+ <p>${eachProduct.productName}</p>
+ <p><span>${eachProduct.currencyCode}</span><span class="price">${eachProduct.productPrice}</span></p>
+ <p>${eachProduct.numberOfSale || 0} sold</p>
+ <p>${(eachProduct.isFreeShipping) ? "Free Shipping" : "No Free Shipping"}</p>
+  <p>${eachProduct.shopName}</p>
+</div>`
+                })
             } catch (error) {
                 console.error(error.response.data);
             }
