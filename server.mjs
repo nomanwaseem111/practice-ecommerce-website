@@ -30,7 +30,7 @@ app.get('/products' , async (req,res) => {
                     res.status(500).send({message : "db error in getting data"})
                     return;
                 })
-                  res.status(201).send({data : "Product is Saved successfully"})
+                  res.status(201).send({data : result})
 })
 
 
