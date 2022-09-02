@@ -20,6 +20,19 @@ const productSchema = new mongoose.Schema({
 
   const productModel = mongoose.model('product', productSchema);
 
+app.get('/products' , async (req,res) => {
+
+   let result = await productModel
+                .find({})
+                .exec()
+                .catch(e => {
+                    console.log("db error :", e);
+                    res.status(500).send({message : "db error in getting data"})
+                    return;
+                })
+                  res.status(201).send({data : "Product is Saved successfully"})
+})
+
 
 app.post('/product', (req,res) => {
 
